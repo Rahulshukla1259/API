@@ -131,7 +131,7 @@ country with particular language which has area b/w Amin and Amax and population
 
 => `/countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&psort=asc`
 
-endpoints to check Pagination => 
+#### endpoints to check Pagination => 
 
 `/countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&psort=asc&page=1&pagelimit=10` => it will show 10 contries on page 1
 
