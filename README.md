@@ -103,63 +103,64 @@ till this point url structuring is clear => just writing urls to check
 
 => `/countries?lang=English&Pmin=400&Pmax=200000&psort=asc`
 
-=> /countries?lang=English&Pmin=400&Pmax=200000&asort=asc
+=> `/countries?lang=English&Pmin=400&Pmax=200000&asort=asc`
 
-=> /countries?lang=English&Pmin=400&Pmax=200000&asort=desc
+=> `/countries?lang=English&Pmin=400&Pmax=200000&asort=desc`
 
-=> /countries?lang=English&Amin=400&Amax=200000&psort=desc
+=> `/countries?lang=English&Amin=400&Amax=200000&psort=desc`
 
-=> /countries?lang=English&Amin=400&Amax=200000&psort=asc
+=> `/countries?lang=English&Amin=400&Amax=200000&psort=asc`
 
-=> /countries?lang=English&Amin=400&Pmax=200000&asort=asc
+=> `/countries?lang=English&Amin=400&Pmax=200000&asort=asc`
 
 5th order filtering => 
 
-=> /countries?Amin=400&Amax=2000&Pmin=300&Pmax=20000000&asort=asc
+=> `/countries?Amin=400&Amax=2000&Pmin=300&Pmax=20000000&asort=asc`
 
-=>/countries?Amin=400&Amax=2000&Pmin=300&Pmax=20000000&psort=desc
+=>`/countries?Amin=400&Amax=2000&Pmin=300&Pmax=20000000&psort=desc`
 
-=> /countries?lang=English&Amin=400&Amax=2000&Pmin=300&Pmax=20000000 
+=> `/countries?lang=English&Amin=400&Amax=2000&Pmin=300&Pmax=20000000 `
 
-6th order filtering=>
+### 6th order filtering=>
 
 country with particular language which has area b/w Amin and Amax and population b/w Pmin and Pmax sorted by area in descending order
 
-=> /countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&asort=desc
+=> `/countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&asort=desc`
 
 country with particular language which has area b/w Amin and Amax and population b/w Pmin and Pmax sorted by population in ascending order
 
-=> /countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&psort=asc
+=> `/countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&psort=asc`
 
 endpoints to check Pagination => 
 
-=> /countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&psort=asc&page=1&pagelimit=10
+`/countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&psort=asc&page=1&pagelimit=10` => it will show 10 contries on page 1
 
-=>  /countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&asort=desc&page=1&pagelimit=20  => total 20 data it will show of first page
+=>  `/countries?lang=English&Amin=40&Amax=20000&Pmin=300&Pmax=20000000&asort=desc&page=1&pagelimit=20`  => total 20 data it will show of first page
 
-=>  /countries?lang=English&Pmin=400&Pmax=200000&psort=asc&page=2&pagelimit=20   => it will show 20 data of second page 
+=>  `/countries?lang=English&Pmin=400&Pmax=200000&psort=asc&page=2&pagelimit=20`   => it will show 20 data of second page 
 
 
-Note: there are many other possibilities of filteration 
+#### Note: there are many other possibilities of filteration 
 
 for example 
 
-filter the country which has area less than Amax and population greater than Pmin sort by population and language is something 
+##### filter the country which has area less than Amax and population greater than Pmin sort by population and language is something 
 
-/countries?Amax=10000&Pmin=100&psort=asc
+`/countries?Amax=10000&Pmin=100&psort=asc`
 
-/countries?lang=English&Amax=10000&Pmin=100psort=asc
+`/countries?lang=English&Amax=10000&Pmin=100psort=asc`
 
 to code above filters 
 
 just call nested function  and give the returned value to respond function 
 
-for this=> /countries?Amax=10000&Pmin=100&psort=asc
-
+for this=> `/countries?Amax=10000&Pmin=100&psort=asc`
+```
 if(!Amin && Amax && !asort && Pmin && !Pmax && psort && !lang){
    let countryname=maxArea(Amax,minPopulation(Pmin,pSort(psort,response)))
    respond(countryname)
 }
+```
 
 in above way we can code for all possible filters
 
