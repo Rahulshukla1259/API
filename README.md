@@ -20,7 +20,7 @@
 
 ### endpoints =>  
 
-FIRST ORDER FILTERATION=>
+#### FIRST ORDER FILTERATION=>
 
 `/countries` => gives data of all contries
 
@@ -44,7 +44,7 @@ i) `/countries?psort=desc` => sort countries with descending order of their popu
 
 j) `/countries?lang=English`  => gives countries where English is spoken
 
-### SECOND ORDER FILTERATION=>
+#### SECOND ORDER FILTERATION=>
 
 k) `/countries?Amin=100&Amax=10000`  => gives contry with area b/w 100 and 1000 (both 100 and 10000 excluded)
 
@@ -68,7 +68,7 @@ s) `/countries?lang=English&Amin=1000` => gives contry with a language english a
 
 t) `/countries?lang=English&Amax=1000000` => gives contry with a language english and area less than Amax
 
-3RD ORDER FILTERATION=> 
+#### 3RD ORDER FILTERATION=> 
 
 u) `/countries?lang=English&Amax=100000&Amin=100` => gives contry with a language and area greater than Amin and area less than Amax
 
@@ -88,7 +88,7 @@ a2) `/countries?lang=English&Pmax=30000&psort=asc` => contry with a language eng
 
 a3) `/countries?lang=English&Pmax=30000&psort=desc` => contry with a language  english population less than Pmax sorted by population descending order
 
-4th order filtering =>
+#### 4th order filtering =>
 
 a4)`/countries?Amin=100&Amax=100000&Pmin=2000&Pmax=200000` => gives contry with area b/w Amin and Amax and population b/w Pmin and Pmax
 
@@ -113,7 +113,7 @@ till this point url structuring is clear => just writing urls to check
 
 => `/countries?lang=English&Amin=400&Pmax=200000&asort=asc`
 
-5th order filtering => 
+#### 5th order filtering => 
 
 => `/countries?Amin=400&Amax=2000&Pmin=300&Pmax=20000000&asort=asc`
 
@@ -121,7 +121,7 @@ till this point url structuring is clear => just writing urls to check
 
 => `/countries?lang=English&Amin=400&Amax=2000&Pmin=300&Pmax=20000000 `
 
-### 6th order filtering=>
+#### 6th order filtering=>
 
 country with particular language which has area b/w Amin and Amax and population b/w Pmin and Pmax sorted by area in descending order
 
